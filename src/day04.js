@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require("os");
 
 function fullyContains(a, b) {
   return a[0] <= b[0] && a[1] >= b[1];
@@ -10,7 +11,7 @@ function overlaps(a, b) {
 
 function day04() {
   const data = fs.readFileSync("../resources/day04.input.txt", "utf-8").trim();
-  const rows = data.split("\r\n")
+  const rows = data.split(os.EOL)
     .map(row => row.split(",")
       .map(pair => pair.split("-")
         .map(item => parseInt(item))));

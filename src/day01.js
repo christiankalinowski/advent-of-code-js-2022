@@ -1,9 +1,10 @@
 const fs = require('fs');
+const os = require("os");
 
 function day01() {
   const data = fs.readFileSync("../resources/day01.input.txt", "utf-8").trim();
-  const cals = data.split("\r\n\r\n")
-    .map(block => block.split("\r\n")
+  const cals = data.split(os.EOL + os.EOL)
+    .map(block => block.split(os.EOL)
       .map(row => parseInt(row))
       .reduce((a, b) => a + b), 0)
     .sort()

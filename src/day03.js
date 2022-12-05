@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require("os");
 
 function isLowerCase(char) {
   return char.toLowerCase() === char;
@@ -29,7 +30,7 @@ function splitStringInTwo(content) {
 
 function day03() {
   const data = fs.readFileSync("../resources/day03.input.txt", "utf-8").trim();
-  const rows = data.split("\r\n")
+  const rows = data.split(os.EOL)
 
   const itemsResult = rows
     .map(splitStringInTwo)

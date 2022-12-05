@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require("os");
 
 const scores = {
   "A X": 1 + 3,
@@ -26,7 +27,7 @@ const scores2 = {
 
 function day02() {
   const data = fs.readFileSync("../resources/day02.input.txt", "utf-8").trim();
-  const rows = data.split("\r\n")
+  const rows = data.split(os.EOL)
   console.log(rows.map(row => scores[row])
     .reduce((a, b) => a + b, 0));
   console.log(rows.map(row => scores2[row])
