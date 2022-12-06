@@ -25,8 +25,9 @@ const scores2 = {
   "C Z": 6 + 1,
 }
 
+
 function day02() {
-  const data = fs.readFileSync("../resources/day02.input.txt", "utf-8").trim();
+  const data = fs.readFileSync("../resources/day02.input.txt", "utf-8").trimEnd();
   const rows = data.split(os.EOL)
   console.log(rows.map(row => scores[row])
     .reduce((a, b) => a + b, 0));

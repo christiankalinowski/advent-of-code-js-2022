@@ -20,16 +20,8 @@ function chunked(chunkSize) {
   };
 }
 
-function findCommonChar(strings) {
-  return Array.from(strings[0]).find(a => strings.slice(1).every(b => b.includes(a)));
-}
-
-function splitStringInTwo(content) {
-  return [content.slice(0, content.length / 2), content.slice(content.length / 2, content.length)];
-}
-
 function day03() {
-  const data = fs.readFileSync("../resources/day03.input.txt", "utf-8").trim();
+  const data = fs.readFileSync("../resources/day03.input.txt", "utf-8").trimEnd();
   const rows = data.split(os.EOL)
 
   const itemsResult = rows
@@ -47,3 +39,11 @@ function day03() {
   console.log(badgeResults);
 }
 day03();
+
+function findCommonChar(strings) {
+  return Array.from(strings[0]).find(a => strings.slice(1).every(b => b.includes(a)));
+}
+
+function splitStringInTwo(content) {
+  return [content.slice(0, content.length / 2), content.slice(content.length / 2, content.length)];
+}
